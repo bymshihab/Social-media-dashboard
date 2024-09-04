@@ -1,1 +1,17 @@
-<p>post-list works!</p>
+<!-- <ul>
+  @for (post of posts; track post.id) {
+  <li>{{ post.title }}</li>
+  <li>{{ post.body }}</li>
+  }
+</ul> -->
+
+<div class="flex flex-col items-center space-y-4 mt-5">
+  @for (post of posts; track post.id) {
+  <div class="card bg-base-100 card-width shadow-xl border border-red-100">
+    <div class="card-body">
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+  }
+</div>
