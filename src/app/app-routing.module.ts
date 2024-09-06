@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'posts/:id', component: PostDetailComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'login', component: LoginComponent },
+  // { path: 'comment-list', component: CommentListComponent },
 ];
 
 @NgModule({
