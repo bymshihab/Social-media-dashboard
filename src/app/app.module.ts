@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsModule } from './features/posts/posts.module';
+import { FormsModule } from '@angular/forms';
+import { AuthModule } from './features/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,8 @@ import { PostsModule } from './features/posts/posts.module';
     SharedModule,
     HttpClientModule,
     PostsModule,
+    FormsModule,
+    AuthModule,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
