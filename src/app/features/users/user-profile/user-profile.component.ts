@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
-import * as L from 'leaflet'; // For Leaflet map
+// Don't import leaflet globally
+// import * as L from 'leaflet'; // Remove this line
 
 @Component({
   selector: 'app-user-profile',
@@ -17,17 +18,17 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     // Check if code is running in the browser
     if (isPlatformBrowser(this.platformId)) {
-      // Only run this code in the browser (not on the server)
       this.loggedInUser = JSON.parse(
         localStorage.getItem('loggedInUser') || '{}'
       );
-
-      // Initialize the map after making sure it's a browser
-      this.initializeMap();
+      // Dynamically import leaflet only if on the client side
+      this.loadLeaflet();
     }
   }
 
-  initializeMap(): void {
+  async loadLeaflet() {
+    const L = await import('leaflet'); // Dynamically import Leaflet
+
     const lat = parseFloat(this.loggedInUser.address.geo.lat);
     const lng = parseFloat(this.loggedInUser.address.geo.lng);
 
