@@ -6,31 +6,13 @@ import { UserProfileComponent } from './features/users/user-profile/user-profile
 import { LoginComponent } from './features/auth/login/login.component';
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent,
-  },
-
-  // { path: '', redirectTo: '/posts', pathMatch: 'full' },
-
-  // {
-  //   path: '',
-  //   component: MainLayoutComponent,
-  //   children: [
-  //     { path: 'posts', component: PostListComponent },
-  //     { path: 'posts/:id', component: PostDetailComponent },
-  //     { path: 'user-profile', component: UserProfileComponent },
-  //     { path: '', redirectTo: 'posts', pathMatch: 'full' },
-  //   ],
-  // },
-  // {
-  //   path: 'login',
-  //   component: AuthLayoutComponent,
-  //   children: [{ path: '', component: LoginComponent }],
-  // },
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: 'posts', component: PostListComponent },
+  { path: 'posts/:id', component: PostDetailComponent },
+  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

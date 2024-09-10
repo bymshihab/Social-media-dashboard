@@ -1,3 +1,11 @@
-<app-header></app-header>
+<!-- Conditionally render the header and footer -->
+<header *ngIf="showHeaderFooter">
+  <app-header></app-header>
+</header>
+
+<!-- The main content (this is where the routed views will be rendered) -->
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+
+<footer *ngIf="showHeaderFooter">
+  <app-footer></app-footer>
+</footer>
