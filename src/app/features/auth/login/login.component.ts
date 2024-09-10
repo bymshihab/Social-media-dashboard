@@ -17,6 +17,8 @@ export class LoginComponent {
     this.authService.login(this.email).subscribe(
       (user) => {
         if (user) {
+          // set user informatiomn to localstorage.
+          localStorage.setItem('loggedInUser', JSON.stringify(user));
           // Navigate to the user profile or dashboard if login is successful
           this.router.navigate(['/posts']);
         } else {
