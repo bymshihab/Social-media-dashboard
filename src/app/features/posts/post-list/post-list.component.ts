@@ -9,6 +9,7 @@ import { CommentService } from '../../../core/services/comment.service';
 })
 export class PostListComponent implements OnInit {
   posts: any[] = [];
+  isLoading: boolean = true;
 
   constructor(
     private postServices: PostService,
@@ -25,6 +26,8 @@ export class PostListComponent implements OnInit {
             post.comments = comment;
           });
       });
+      // Turn off loading state after data is fetched
+      this.isLoading = false;
     });
   }
 }
