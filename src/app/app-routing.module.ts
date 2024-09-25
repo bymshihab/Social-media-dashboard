@@ -8,7 +8,7 @@ import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.co
 import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/posts', pathMatch: 'full' },
+  { path: '', redirectTo: '/post', pathMatch: 'full' },
   { path: 'posts', component: PostListComponent },
   { path: 'posts/:id', component: PostDetailComponent },
   { path: 'user-profile', component: UserProfileComponent },
